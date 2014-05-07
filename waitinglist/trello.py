@@ -27,9 +27,9 @@ class Api(object):
     def org_id(self):
         if not self._org_id:
             url = "/1/organizations/{0}?token={1}&key={2}".format(self.org_slug, self.token, self.key)
-            print url
+            print(url)
             r = requests.get("{0}{1}".format(self.base_url, url))
-            print r.status_code
+            print(r.status_code)
             self._org_id = requests.get("{0}{1}".format(self.base_url, url)).json()["id"]
         return self._org_id
 
